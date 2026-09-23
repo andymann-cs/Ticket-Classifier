@@ -1,0 +1,17 @@
+# Virtual environment
+classifervEnv/
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables / secrets
+.env
+
+# VS Code
+.vscode/
