@@ -16,3 +16,7 @@ __pycache__/
 # VS Code
 .vscode/
 models/
+
+classifier_test.py
+jira_test.py
+ticket_router.log
