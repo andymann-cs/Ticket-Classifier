@@ -7,7 +7,7 @@ License: MIT
 Compared effectiveness of different models (TF-IDF + Logistic, Pytorch, Transformers) on identifying the most reasonable recipient of an IT Ticket from a small dataset avaialbe on Hugging Face.
 
 # AI-Powered IT Ticket Router
-A small project involving experimentation of differing models with their ability to classify example IT-helpdesk tickets, before integrating the most favoured model to interact with the Jira REST API to automate ticket labelling.
+A small project involving experimentation of differing models with their ability to classify example IT-helpdesk tickets, before integrating the most favoured model to interact with the Jira REST API to automate ticket labelling. This could eventually be developed to be implemented in areas that structure tasks by ticket systems, and reduce the cognitive load to route tickets to the correct teams, with the transformer model producing sub 5 second ticket classification along with providing logs and model confidence.
 
 ## Overview
 Experimented from varying levels of models from a TF-IDF + Logistic Regression to a simple transformer to exaluate the effectiveness of models in classifying example IT-helpdesk style tickets from a small dataset available on Hugging Face.
@@ -49,7 +49,8 @@ If the model confidence surpassed a set threshold (70% was chosen in this case),
 
 ## Jira Integration
 Within Jira, an automation rule was configured such that whenever a new ticket was created, an action would be performed, sending a POST HTTP request to the ngrok url, along with the webhook password such to interact with the FastAPI server and receive a predicted ticket class.
-
+<img width="1457" height="595" alt="image" src="https://github.com/user-attachments/assets/cf16cedf-8b9f-4efa-ac03-85ebc39a765c" />
+This leads to sub 5 second ticket classification whereas a human will likely take longer to route the ticket.
 
 ## Logging
 When submitting a request to predict a ticket's class, a log was made in the root folder. Examples of the kinds of contents shown below:
