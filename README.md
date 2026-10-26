@@ -45,7 +45,7 @@ If the model confidence surpassed a set threshold (70% was chosen in this case),
 - pip to install necessary libraries
 - env variables for Jira API tokens, webhook secrets
 - Uvicorn and FastAPI to host instances that allow interaction with Jira REST API
-- Ngrok installed
+- Ngrok installed and authenticated
 
 ## Jira Integration
 Within Jira, an automation rule was configured such that whenever a new ticket was created, an action would be performed, sending a POST HTTP request to the ngrok url, along with the webhook password such to interact with the FastAPI server and receive a predicted ticket class.
@@ -55,11 +55,10 @@ Within Jira, an automation rule was configured such that whenever a new ticket w
 When submitting a request to predict a ticket's class, a log was made in the root folder. Examples of the kinds of contents shown below:
 <img width="1027" height="151" alt="image" src="https://github.com/user-attachments/assets/b5c96c73-b891-4365-b58d-cac41f293cf2" />
 
-
-## Testing
-
 ## Limitations / Future Improvements
-Small synthetic dataset
-tiny minority classes
-local ngrok deployment
-possible production deployment
+- Dataset was very small, and all tested models would likely benefit performance-wise from more examples
+- Many classes had very few examples, with some even being removed
+- Need more examples for the classes that got removed especially, and the drop in model confidence when predicting a minority class means this is a priority
+- Project was performed locally with ngrok deployment rather than a far away server
+- Project refinement could lead to deployment, starting with small teams or simple tickets
+
